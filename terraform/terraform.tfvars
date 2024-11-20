@@ -6,9 +6,9 @@ vm_size              = "Standard_B1s"                  # VM size (adjust as per 
 admin_user           = "azureuser"                      # The admin username for SSH login
 
 # Network Configuration
-subnet_id            = "/subscriptions/bd4f0481-b137-40f1-9e64-20cfd55fbf49/resourceGroups/my-resource-group/providers/Microsoft.Network/virtualNetworks/my-vnet/subnets/my-subnet"  # Example subnet ID
+subnet_id            = "/subscriptions/27c83813-916e-49fa-8d2a-d35332fc8ca4/resourceGroups/my-resource-group/providers/Microsoft.Network/virtualNetworks/my-vnet/subnets/my-subnet"  # Example subnet ID
 
 # SSH Public Key Path
-subscription_id = "bd4f0481-b137-40f1-9e64-20cfd55fbf49"
+subscription_id = "27c83813-916e-49fa-8d2a-d35332fc8ca4"
 ssh_key_path = "/Users/noble/.ssh/id_rsa.pub"
-tenant_id = "bd4f0481-b137-40f1-9e64-20cfd55fbf49"
+tenant_id = "27c83813-916e-49fa-8d2a-d35332fc8ca4"
