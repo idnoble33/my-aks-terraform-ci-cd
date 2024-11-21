@@ -16,3 +16,16 @@ scripts/*.sh
 # Ignore large module files if not needed
 modules/acr/
 modules/vm/
+
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.egg
+*.egg-info
+*.env
+.env/
+venv/
+pip-log.txt
+get-pip.py
