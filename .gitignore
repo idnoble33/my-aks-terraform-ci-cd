@@ -1,0 +1,18 @@
+# Terraform state
+*.tfstate
+*.tfstate.backup
+
+# Lock and temporary files
+*.log
+*.bak
+.terraform.lock.hcl
+
+# Terraform cache
+.terraform/
+
+# Ignore local scripts
+scripts/*.sh
+
+# Ignore large module files if not needed
+modules/acr/
+modules/vm/
