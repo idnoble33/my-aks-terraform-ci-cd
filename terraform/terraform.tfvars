@@ -6,11 +6,11 @@ vm_size              = "Standard_B1s"                   # VM size (adjust as per
 admin_user           = "azureuser"                      # The admin username for SSH login
 
 # Network Configuration
-subnet_id            = "/subscriptions/2fa0e512-f70e-430f-9186-1b06543a848e/resourceGroups/Idowu-Candidate/providers/Microsoft.Network/virtualNetworks/my-vnet/subnets/my-subnet"
+subnet_id            = "/subscriptions/<subscription_id>/resourceGroups/Idowu-Candidate/providers/Microsoft.Network/virtualNetworks/my-vnet/subnets/my-subnet"
 
 # SSH Public Key Path
 ssh_key_path         = "/Users/noble/.ssh/id_rsa.pub" 
 
 # Subscription and Tenant IDs
-subscription_id      = "2fa0e512-f70e-430f-9186-1b06543a848e"  # Subscription ID
-tenant_id            = "2fa0e512-f70e-430f-9186-1b06543a848e"    # Tenant ID
+subscription_id      = "<subscription_id"  # Subscription ID
+tenant_id            = "tenant_id"    # Tenant ID
