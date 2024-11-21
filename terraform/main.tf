@@ -41,7 +41,7 @@ module "keyvault" {
   resource_group_name = azurerm_resource_group.candidate_rg.name
   secret_name         = var.secret_name
   secret_value        = var.secret_value
-  tenant_id           = var.tenant_id  # Added the missing argument
+  tenant_id           = var.tenant_id
 }
 
 # AKS Module
@@ -59,7 +59,7 @@ module "aks" {
 
 # Update Inventory File (Ansible Integration)
 resource "null_resource" "update_inventory" {
-  depends_on = [module.vm] # Ensures the VM is provisioned before this runs
+  depends_on = [module.vm]
 
   provisioner "local-exec" {
     command = <<EOT

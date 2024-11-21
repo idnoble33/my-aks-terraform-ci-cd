@@ -9,7 +9,7 @@ admin_user           = "azureuser"                      # The admin username for
 subnet_id            = "/subscriptions/2fa0e512-f70e-430f-9186-1b06543a848e/resourceGroups/Idowu-Candidate/providers/Microsoft.Network/virtualNetworks/my-vnet/subnets/my-subnet"
 
 # SSH Public Key Path
-ssh_key_path         = "/Users/noble/.ssh/id_rsa.pub"    # Path to SSH public key
+ssh_key_path         = "/Users/noble/.ssh/id_rsa.pub" 
 
 # Subscription and Tenant IDs
 subscription_id      = "2fa0e512-f70e-430f-9186-1b06543a848e"  # Subscription ID
