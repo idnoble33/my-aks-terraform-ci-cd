@@ -1,3 +1,32 @@
+// pipeline {
+//     agent any
+
+//     stages {
+//         stage('Build Docker Image') {
+//             steps {
+//                 script {
+//                     sh 'docker build -t <acr-name>.azurecr.io/hello-world:v1 .'
+//                 }
+//             }
+//         }
+//         stage('Push to ACR') {
+//             steps {
+//                 script {
+//                     sh 'docker push <acr-name>.azurecr.io/hello-world:v1'
+//                 }
+//             }
+//         }
+//         stage('Deploy to AKS') {
+//             steps {
+//                 script {
+//                     sh 'kubectl apply -f k8s/deployment.yaml'
+//                     sh 'kubectl apply -f k8s/service.yaml'
+//                     sh 'kubectl apply -f k8s/ingress.yaml'
+//                 }
+//             }
+//         }
+//     }
+// }
 pipeline {
     agent any
 
