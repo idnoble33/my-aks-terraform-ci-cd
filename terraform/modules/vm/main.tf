@@ -15,7 +15,7 @@ resource "azurerm_public_ip" "vm_ip" {
   name                = "${var.vm_name}-public-ip"
   location            = var.location
   resource_group_name = var.resource_group_name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
 }
 
 resource "azurerm_virtual_machine" "vm" {

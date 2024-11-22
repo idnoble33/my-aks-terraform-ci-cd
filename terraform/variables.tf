@@ -1,16 +1,3 @@
-
-# Subscription Information
-variable "subscription_id" {
-  description = "The Azure subscription ID"
-  type        = string
-}
-
-variable "tenant_id" {
-  description = "Azure Active Directory tenant ID"
-  type        = string
-}
-
-# Resource Group
 variable "resource_group_name" {
   description = "Name of the Azure resource group"
   default     = "Idowu-Candidate"
@@ -43,20 +30,15 @@ variable "admin_user" {
   default     = "azureuser"
 }
 
-variable "ssh_key_path" {
-  description = "Path to the SSH public key file"
-  default     = "/Users/noble/.ssh/id_rsa.pub"
-}
-
 variable "subnet_id" {
   description = "Subnet ID for the VM network interface"
-  default     = "your-subnet-id" # Replace with your actual subnet
+  default     = "your-subnet-id" # Replace with actual subnet
 }
 
 # Key Vault
 variable "keyvault_name" {
   description = "Name of the Key Vault"
-  default     = "mykeyvault"
+  default     = "myuniquekeyvaultname"
 }
 
 variable "secret_name" {
@@ -72,7 +54,7 @@ variable "secret_value" {
 # AKS
 variable "aks_name" {
   description = "Name of the AKS cluster"
-  default     = "myaks"
+  default     = "myaks-aks"
 }
 
 variable "dns_prefix" {
@@ -99,3 +81,20 @@ variable "extra_pool_node_count" {
   description = "Node count for AKS extra node pool"
   default     = 1
 }
+
+variable "subscription_id" {
+  description = "The Azure subscription ID"
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "Azure Active Directory tenant ID"
+  type        = string
+}
+
+variable "ssh_key_path" {
+  description = "Path to the SSH public key file"
+  type        = string
+  default     = "/Users/noble/.ssh/id_rsa.pub"
+}
+
