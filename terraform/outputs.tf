@@ -1,33 +1,19 @@
-output "resource_group_name" {
-  value = azurerm_resource_group.candidate_rg.name
+output "vm_public_ip" {
+  value = azurerm_public_ip.vm_ip.ip_address
 }
 
 output "acr_login_server" {
   value = module.acr.acr_login_server
 }
 
-output "acr_id" {
-  value = module.acr.acr_id
+output "aks_cluster_name" {
+  description = "The name of the AKS cluster"
+  value       = module.aks.aks_cluster_name
 }
 
-output "vm_ip" {
-  description = "The public IP address of the virtual machine."
-  value       = module.vm.public_ip
+output "keyvault_uri" {
+  value = module.keyvault.keyvault_uri
 }
-
-output "keyvault_id" {
-  value = module.keyvault.keyvault_id
-}
-
-output "secret_uri" {
-  value = module.keyvault.secret_uri
-}
-
-output "aks_id" {
-  value = module.aks.aks_id
-}
-
-output "kube_config" {
-  value = module.aks.kube_config
-  sensitive = true
+output "ssh_key_test" {
+  value = file(var.ssh_key_path)
 }

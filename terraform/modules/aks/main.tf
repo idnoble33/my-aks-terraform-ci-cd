@@ -1,29 +1,20 @@
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "${var.aks_name}-aks"
-  location            = var.location
+  name                = var.cluster_name
+  location            = var.resource_group.location
   resource_group_name = var.resource_group_name
-  dns_prefix          = "${var.dns_prefix}-dns"
+  dns_prefix          = var.dns_prefix
 
   default_node_pool {
     name       = "default"
-    vm_size    = var.vm_size
     node_count = var.node_count
+    vm_size    = "Standard_DS2_v2"
   }
 
   identity {
     type = "SystemAssigned"
   }
 
-
   tags = {
-    environment = "dev"
+    environment = "production"
   }
-
-}
-
-resource "azurerm_kubernetes_cluster_node_pool" "extra_pool" {
-  name                = "extra"
-  kubernetes_cluster_id = azurerm_kubernetes_cluster.aks.id
-  vm_size             = var.extra_pool_vm_size
-  node_count          = var.extra_pool_node_count
 }

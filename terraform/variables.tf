@@ -1,100 +1,78 @@
-variable "resource_group_name" {
-  description = "Name of the Azure resource group"
-  default     = "Idowu-Candidate"
+# AKS Variables
+variable "aks_name" {
+  description = "Name of the AKS cluster"
+  default     = "example-aks"
 }
 
-variable "location" {
-  description = "Azure region"
-  default     = "westeurope"
+variable "cluster_name" {
+  description = "Cluster name for AKS"
+  default     = "example-cluster"
 }
 
-# ACR
-variable "acr_name" {
-  description = "Name of the Azure Container Registry"
-  default     = "myacr"
-}
-
-# VM
-variable "vm_name" {
-  description = "Name of the Virtual Machine"
-  default     = "jenkins-vm"
+variable "node_count" {
+  description = "Number of nodes in the default node pool"
+  default     = 2
 }
 
 variable "vm_size" {
-  description = "Size of the VM"
-  default     = "Standard_B2s"
-}
-
-variable "admin_user" {
-  description = "Admin username for the VM"
-  default     = "azureuser"
-}
-
-variable "subnet_id" {
-  description = "Subnet ID for the VM network interface"
-  default     = "your-subnet-id" # Replace with actual subnet
-}
-
-# Key Vault
-variable "keyvault_name" {
-  description = "Name of the Key Vault"
-  default     = "myuniquekeyvaultname"
-}
-
-variable "secret_name" {
-  description = "Name of the secret in the Key Vault"
-  default     = "app-secret"
-}
-
-variable "secret_value" {
-  description = "Value of the secret"
-  default     = "my-super-secret"
-}
-
-# AKS
-variable "aks_name" {
-  description = "Name of the AKS cluster"
-  default     = "myaks-aks"
-}
-
-variable "dns_prefix" {
-  description = "DNS prefix for the AKS cluster"
-  default     = "myaksdns"
-}
-
-variable "aks_vm_size" {
-  description = "VM size for AKS default pool"
+  description = "VM size for the AKS node pool"
   default     = "Standard_DS2_v2"
 }
 
-variable "aks_node_count" {
-  description = "Node count for AKS default pool"
-  default     = 1
+variable "service_cidr" {
+  description = "Service CIDR for AKS"
+  default     = "10.0.0.0/16"
 }
 
-variable "extra_pool_vm_size" {
-  description = "VM size for AKS extra node pool"
-  default     = "Standard_B2s"
+variable "dns_service_ip" {
+  description = "DNS service IP for AKS"
+  default     = "10.0.0.10"
 }
 
-variable "extra_pool_node_count" {
-  description = "Node count for AKS extra node pool"
-  default     = 1
+variable "docker_bridge_cidr" {
+  description = "Docker bridge CIDR for AKS"
+  default     = "172.17.0.1/16"
 }
 
-variable "subscription_id" {
-  description = "The Azure subscription ID"
+variable "dns_prefix" {
+  description = "DNS prefix for AKS"
+  default     = "example-dns"
+}
+
+# Resource Group Variables
+variable "resource_group_name" {
+  description = "Name of the resource group"
+  default     = "example-rg"
+}
+
+variable "location" {
+  description = "Azure location for resources"
+  default     = "West US"
+}
+
+# VM Variables
+variable "admin_username" {
+  description = "Administrator username for the VM"
+  default     = "azureuser"
+}
+
+
+variable "admin_password" {
+  description = "The admin password for the VM."
   type        = string
 }
 
-variable "tenant_id" {
-  description = "Azure Active Directory tenant ID"
+variable "client_id" {
+  description = "The client ID of the Service Principal"
+  type        = string
+}
+
+variable "client_secret" {
+  description = "The client secret of the Service Principal"
   type        = string
 }
 
 variable "ssh_key_path" {
-  description = "Path to the SSH public key file"
-  type        = string
-  default     = "/Users/noble/.ssh/id_rsa.pub"
+  description = "Path to the SSH public key"
+  default     = "/Users/noble/.ssh/id_rsa_new.pub" # Ensure the key is in the correct directory within the Terraform project
 }
-

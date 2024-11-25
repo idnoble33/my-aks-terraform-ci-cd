@@ -1,35 +1,43 @@
-variable "aks_name" {
-  description = "Name of the AKS cluster"
-}
-
-variable "location" {
-  description = "Location for AKS"
-}
-
 variable "resource_group_name" {
-  description = "Resource group for AKS"
+  description = "The name of the resource group"
+  type        = string
+}
+
+variable "resource_group" {
+  description = "Resource group object with name and location"
+  type = object({
+    name     = string
+    location = string
+  })
+}
+
+variable "cluster_name" {
+  description = "The name of the AKS cluster"
+  type        = string
 }
 
 variable "dns_prefix" {
   description = "DNS prefix for the cluster"
+  type        = string
+}
+
+variable "node_count" {
+  description = "Number of nodes in the default node pool"
+  type        = number
 }
 
 variable "vm_size" {
   description = "VM size for the default node pool"
-  default     = "Standard_DS2_v2"
+  type        = string
+  default = "Standard_NC40ads_H100_v5"
 }
 
-variable "node_count" {
-  description = "Node count for the default pool"
-  default     = 1
+variable "client_id" {
+  description = "Client ID for the service principal"
+  type        = string
 }
 
-variable "extra_pool_vm_size" {
-  description = "VM size for the extra node pool"
-  default     = "Standard_B2s"
-}
-
-variable "extra_pool_node_count" {
-  description = "Node count for the extra pool"
-  default     = 1
+variable "client_secret" {
+  description = "Client secret for the service principal"
+  type        = string
 }

@@ -4,17 +4,25 @@ variable "acr_name" {
 }
 
 variable "resource_group_name" {
-  description = "The resource group where the ACR will be created"
+  description = "The name of the resource group where the Azure Container Registry will be created."
   type        = string
 }
 
 variable "location" {
-  description = "The Azure region where the ACR will be deployed"
-  type        = string
+  description = "Azure Region"
+  type = string
+  default     = "westus"
 }
 
 variable "admin_enabled" {
-  description = "Enable admin access for the ACR"
+  description = "Enable admin access for ACR"
   type        = bool
   default     = true
+}
+variable "resource_group" {
+  description = "Resource group details"
+  type        = object({
+    name     = string
+    location = string
+  })
 }

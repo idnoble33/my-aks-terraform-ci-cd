@@ -1,34 +1,47 @@
 variable "vm_name" {
-  description = "The name of the virtual machine."
+  description = "Name of the VM"
+}
+
+ variable "vm_size" {
+  description = "The size of the virtual machine."
   type        = string
+  default     = "Standard_D2ads_v6"
 }
 
 variable "location" {
-  description = "The Azure location where the resources will be created."
-  type        = string
+  description = "Azure region"
+  type = string
+}
+
+variable "admin_username" {
+  description = "Admin username for the VM"
+}
+
+variable "ssh_key" {
+  description = "Public SSH key for VM access"
+}
+
+variable "network_interface_ids" {
+  description = "List of network interface IDs for the VM"
 }
 
 variable "resource_group_name" {
-  description = "The name of the resource group."
+  description = "The name of the resource group where ACR will be created."
   type        = string
 }
 
-variable "vm_size" {
-  description = "The size of the virtual machine."
+variable "admin_password" {
+  description = "The admin password for the virtual machine."
   type        = string
 }
 
-variable "admin_user" {
-  description = "Admin username for the virtual machine."
-  type        = string
+variable "resource_group" {
+  description = "The resource group object for the VM."
+  type        = any
 }
 
 variable "ssh_key_path" {
-  description = "Path to the SSH public key file."
+  description = "The path to the SSH private key file used for SSH authentication"
   type        = string
-}
-
-variable "subnet_id" {
-  description = "ID of the subnet where the VM will be deployed."
-  type        = string
+  default     = "/Users/noble/.ssh/id_rsa_new.pub"  # Modify this to the appropriate default or leave it without the default for input
 }
